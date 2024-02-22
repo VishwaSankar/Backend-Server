@@ -53,8 +53,8 @@ app.use((err,req,res,next)=>{
   return res.status(errorStatus).send(errorMessage);
 })
 
-
-app.listen("https://backends-k9wj.onrender.com",()=>{
+connect();
+app.listen(5000,()=>{
     connect()
     console.log("Backend Server is running");
 })
