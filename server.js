@@ -25,7 +25,7 @@ const connect= async ()=> {try{
 app.use(sessionMiddleware);
 app.use(express.json())
 app.use(cookieParser())
-app.use(cors({origin:"https://gaming-haven-frontend.vercel.app", credentials:true,methods:["POST","GET"]}))
+app.use(cors({origin:"https://dainty-semolina-379287.netlify.app", credentials:true}))
 app.use("/auth",authRoute)
 app.use("/users",userRoute)
 // app.use("/games",gamesRoute)
@@ -39,7 +39,7 @@ app.use((req, res, next) => {
   next();
 });
 app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'https://gaming-haven-frontend.vercel.app/');
+  res.header('Access-Control-Allow-Origin', 'https://dainty-semolina-379287.netlify.app');
   next();
 });
 app.use((req, res, next) => {
