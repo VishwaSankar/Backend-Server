@@ -25,7 +25,7 @@ const connect= async ()=> {try{
 app.use(sessionMiddleware);
 app.use(express.json())
 app.use(cookieParser())
-app.use(cors({origin:"http://localhost:3000",credentials:true}))
+app.use(cors({origin:"https://dainty-semolina-379287.netlify.app",credentials:true}))
 app.use("/auth",authRoute)
 app.use("/users",userRoute)
 // app.use("/games",gamesRoute)
