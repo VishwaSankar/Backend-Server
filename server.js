@@ -34,7 +34,18 @@ app.use("/cart",router)
 app.use("/library",router)
 // app.use("/reviews",reviewroute)
 app.use("/order",orderroute)
-
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Credentials', true);
+  next();
+});
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'https://dainty-semolina-379287.netlify.app');
+  next();
+});
+app.use((req, res, next) => {
+  res.header('Content-Security-Policy', "default-src 'self'; frame-ancestors 'none';");
+  next();
+});
 app.use((err,req,res,next)=>{
   const errorStatus=err.status || 500;
   const errorMessage=err.message || "something went wrong"
