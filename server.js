@@ -10,6 +10,7 @@ import cors from "cors"
 import router from "./routes/cart.routes.js";
 import favroute from "./routes/fav.routes.js"
 import reviewroute from "./routes/review.routes.js"
+import sessionMiddleware from "./middleware/session.js";
 const app =express();
 const connect= async ()=> {try{
     await mongoose
@@ -21,9 +22,10 @@ const connect= async ()=> {try{
     console.log(err);
   }
 }
+app.use(sessionMiddleware);
 app.use(express.json())
 app.use(cookieParser())
-app.use(cors({origin:"https://dainty-semolina-379287.netlify.app",credentials:true}))
+app.use(cors({origin:"http://localhost:3000",credentials:true}))
 app.use("/auth",authRoute)
 app.use("/users",userRoute)
 // app.use("/games",gamesRoute)
