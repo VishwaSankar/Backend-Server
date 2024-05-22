@@ -11,9 +11,7 @@ const sessionConfig = {
   }),
   cookie: {
     httpOnly: true,
-    maxAge: 1000 * 60 * 60 * 24 * 7,
-    sameSite: 'none',
-    secure: true// one week
+    maxAge: 1000 * 60 * 60 * 24 * 7, // one week
   },
 };
 
